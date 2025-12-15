@@ -25,6 +25,12 @@ public class Product {
     inverseJoinColumns = @JoinColumn(name = "category_id"))
     private Set<Category> categories = new HashSet<>();
 
+    //cross reference to access ordered items from this class through OrderItemPK(ManyToOne) using id as a pointer to product(OneToMany)
+    //go check the OrderItemPK class, later come back here
+    @OneToMany(mappedBy = "id.product")
+    private Set<OrderItem> items = new HashSet<>();
+
+
     public Product(){}
 
     public Product(Long id, String name, String description, Double price, String imageURL) {
