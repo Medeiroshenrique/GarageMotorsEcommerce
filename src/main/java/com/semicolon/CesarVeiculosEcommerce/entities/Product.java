@@ -17,7 +17,7 @@ public class Product {
     @Column(columnDefinition = "TEXT")//fazendo isso mapeamos um texto longo ao invéz de um simples VARCHAR
     private String description;
     private Double price;
-    private String imageURL;
+    private String imageUrl; //To Remember: camelCase becomes snake_case in the db code
 
 
     @ManyToMany
@@ -39,7 +39,7 @@ public class Product {
         this.name = name;
         this.description = description;
         this.price = price;
-        this.imageURL = imageURL;
+        this.imageUrl = imageURL;
     }
 
     public Long getId() {
@@ -74,12 +74,12 @@ public class Product {
         this.price = price;
     }
 
-    public String getImageURL() {
-        return imageURL;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setImageURL(String imageURL) {
-        this.imageURL = imageURL;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public Set<Category> getCategories() {
